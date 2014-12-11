@@ -17,7 +17,7 @@ image-sdf atlas.png --spread 32 --downscale 2 > atlas-sdf.png
 
 The code has been adpated from [libgdx](https://github.com/libgdx/libgdx/blob/master/extensions/gdx-tools/src/com/badlogic/gdx/tools/distancefield/DistanceFieldGenerator.java).
 
-PRs welcome. This could be split into more modules (generating a bit mask, computing SDF, the tool, etc).
+PRs welcome. This could be split into more modules (generating a bit mask, computing SDF, better image support, etc).
 
 ## Usage
 
