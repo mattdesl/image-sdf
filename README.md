@@ -23,8 +23,6 @@ PRs welcome. This could be split into more modules (generating a bit mask, compu
 
 [![NPM](https://nodei.co/npm/image-sdf.png)](https://nodei.co/npm/image-sdf/)
 
-#### `image-sdf input.png [opt]`
-
 ```
 image-sdf input.png [opt]
 
@@ -41,6 +39,7 @@ Examples:
 ```
 image-sdf input.png -c "rgb(128,255,20)" -s 10 -o output.png
 image-sdf input.png --spread 2 --downscale 2 > output.png
+image-sdf input.png --color black -o build/output.png
 ```
 
 The programmatic API may evolve into their own modules, i.e. for custom bitmasks.
