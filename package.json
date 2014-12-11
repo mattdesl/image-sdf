@@ -1,7 +1,7 @@
 {
   "name": "image-sdf",
   "version": "1.0.2",
-  "description": "generates a signed distance field from RGBA pixels",
+  "description": "generate a signed distance field from an image",
   "main": "index.js",
   "license": "MIT",
   "author": {
