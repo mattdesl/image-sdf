@@ -23,19 +23,22 @@
     "yargs": "^1.3.3"
   },
   "devDependencies": {
+    "2d-context": "^1.2.0",
     "baboon-image-uri": "^1.0.1",
     "browserify": "^8.1.3",
-    "domready": "^1.0.7",
+    "buffer-equal": "0.0.1",
+    "concat-stream": "^1.4.7",
+    "garnish": "^2.1.0",
     "get-image-pixels": "^1.0.0",
     "img": "^1.0.0",
-    "ndarray-canvas": "0.0.0",
-    "smokestack": "^3.2.0",
-    "tap-closer": "^1.0.0",
+    "npm-execspawn": "^1.0.6",
     "tap-spec": "^2.2.1",
-    "tape": "^3.0.3"
+    "tape": "^3.0.3",
+    "wzrd": "^1.2.1"
   },
   "scripts": {
-    "test": "browserify test.js | tap-closer | smokestack | tap-spec"
+    "test": "node test/test.js | tap-spec",
+    "test-browser": "wzrd test/test-browser.js | garnish"
   },
   "keywords": [
     "sdf",
