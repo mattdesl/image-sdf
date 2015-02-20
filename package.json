@@ -1,6 +1,6 @@
 {
   "name": "image-sdf",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "generate a signed distance field from an image",
   "main": "index.js",
   "license": "MIT",
