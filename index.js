@@ -8,6 +8,8 @@ module.exports = function sdf(array, opt) {
     var spread = number(opt && opt.spread, 1)
     var downscale = number(opt && opt.downscale, 1)
     
+    var testInside = opt.isInside || inside;
+    
     var width = array.shape[0],
         height = array.shape[1]
 
@@ -23,7 +25,7 @@ module.exports = function sdf(array, opt) {
         y = ~~( i / width )
         var idx = array.index(x, y, 0)
 
-        var bit = inside(array, x, y) ? 0xff : 0x00
+        var bit = testInside(array, x, y) ? 0xff : 0x00
         bitmap.set(x, y, 0, bit)
     }
 
