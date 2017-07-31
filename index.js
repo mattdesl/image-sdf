@@ -7,7 +7,8 @@ var stride = 4
 module.exports = function sdf(array, opt) {
     var spread = number(opt && opt.spread, 1)
     var downscale = number(opt && opt.downscale, 1)
-    
+    var threshold = number(opt && opt.threshold, 128)
+
     var width = array.shape[0],
         height = array.shape[1]
 
@@ -23,7 +24,7 @@ module.exports = function sdf(array, opt) {
         y = ~~( i / width )
         var idx = array.index(x, y, 0)
 
-        var bit = inside(array, x, y) ? 0xff : 0x00
+        var bit = inside(array, x, y, threshold) ? 0xff : 0x00
         bitmap.set(x, y, 0, bit)
     }
 
@@ -90,10 +91,10 @@ function squareDist(x1, y1, x2, y2) {
     return dx*dx + dy*dy
 }
 
-function inside(array, x, y) {
+function inside(array, x, y, threshold) {
     var idx = array.index(x, y, 0)
     var data = array.data
-    var t = 128
-    return data[idx+3]>t && 
-        (data[idx+0]>t || data[idx+1]>t || data[idx+2]>t)        
+    var t = threshold
+    return data[idx+3]>t &&
+        (data[idx+0]>t || data[idx+1]>t || data[idx+2]>t)
 }

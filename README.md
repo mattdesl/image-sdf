@@ -30,6 +30,7 @@ Options:
   -o, --output     output file                                    
   -s, --spread     distance spread amount, default 1              
   -d, --downscale  amount to downscale the output, default 1      
+  -t, --threshold  threshold for the bitmask, default 128         
   -c, --color      output color, accepts css strings, default #fff
   -h               Show help                                      
 ```

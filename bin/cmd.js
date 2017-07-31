@@ -8,6 +8,8 @@ var argv = require('yargs')
     .describe('s', 'distance spread amount, default 1')
     .alias('d', 'downscale')
     .describe('d', 'amount to downscale the output, default 1')
+    .alias('t', 'threshold')
+    .describe('t', 'threshold for the bitmask, default 128')
     .alias('c', 'color')
     .describe('c', 'output color, accepts css strings, default #fff')
     .help('h')
@@ -27,6 +29,11 @@ var rgb = argv.c ? getRgb(argv.c.trim()) : [0xff, 0xff, 0xff]
 read(input, function(err, pixels) {
     if (err)
         throw err
-    var sdf = generate(pixels, { spread: argv.s, downscale: argv.d, color: rgb })
+    var sdf = generate(pixels, {
+      spread: argv.s,
+      downscale: argv.d,
+      threshold: argv.t,
+      color: rgb
+    })
     save(sdf, 'png').pipe(output)
 })
