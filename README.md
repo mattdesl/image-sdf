@@ -27,11 +27,14 @@ PRs welcome. This could be split into more modules (generating a bit mask, compu
 image-sdf input.png [opt]
 
 Options:
-  -o, --output     output file                                    
-  -s, --spread     distance spread amount, default 1              
-  -d, --downscale  amount to downscale the output, default 1      
-  -c, --color      output color, accepts css strings, default #fff
-  -h               Show help                                      
+  -o, --output      output file
+  -s, --spread      distance spread amount, default 1
+  -d, --downscale   amount to downscale the output, default 1
+  -a, --alphaonly   Alpha only, if 1 then only look at alpha not RGB. default 0
+  -x, --gridwidth   Grid cell width in px. If present, SDFs will be generated within grid cells. default -1
+  -y, --gridheight  Grid cell height in px. If present, SDFs will be generated within grid cells. default -1
+  -c, --color       output color, accepts css strings. If it is "S" then it will use the same color replacing alpha, default #fff
+  -h                Show help
 ```
 
 Examples:
@@ -40,6 +43,7 @@ Examples:
 image-sdf input.png -c "rgb(128,255,20)" -s 10 -o output.png
 image-sdf input.png --spread 2 --downscale 2 > output.png
 image-sdf input.png --color black -o build/output.png
+image-sdf input.png --color S -o build/output.png -x 16 -y 16 -a 1
 ```
 
 The programmatic API may evolve into their own modules, i.e. for custom bitmasks.
